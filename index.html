@@ -1,146 +1,170 @@
 <!DOCTYPE HTML>
 <html>
-    
-    <head>
-        <title>To-Do List</title>
-       
-    </head>
-   <style>
-        *{
-    margin: 0;
-    padding: 0;
-    outline: 0;
-}
-body{
-    background-color: violet;
-    background-image: url('https://www.whatspaper.com/wp-content/uploads/2021/02/aesthetic-background-whatspaper.jpg');
-}
 
-.container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #fafafa67;
-    box-shadow: 0 2px 8px rgba(0,0,0,.16);
-    backdrop-filter: blur(10px);
-    width: 460px;
-    height: 680px;
-    text-align: center;
-    font-family: 'Nunito',sans-serif;
-   
-}
-h1{ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  
-    margin: 12px 0;
-    
-    color:palevioletred;
-}
-.add-elements{
-    margin: 12px 0;
-    
-}
-input{
-    padding: 6px 4px;
-    width: 70%;
-}
-button{
-    padding: 7px 14px;
-    background-color: #00b0ff;
-    border: none;
-    border-radius: 4px;
-    color: #fafafa;
+<head>
+    <title>To-Do List</title>
 
-}
-.element-list{
-    height: 550px;
-    
-}
-ul{
-    padding: 15px;
-   
-}
-li{
-    list-style: none;
-    padding: 10px 5px;
-    background-color: #fff;
-    margin: 12px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.16);
-    border-radius: 3px;
-    transition: .4s;
-}
-button:hover{
-    background-color: #1565c0;
-}
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+    }
 
-li:hover{
-    background-color: #e0e0e0;
-}
+    body {
+        background-color: violet;
+        background-image: url('https://cdn.dribbble.com/users/156849/screenshots/6993098/32.gif');
+        background-size: cover;
 
-.checked{
-    text-decoration: line-through;
-    background-color: #e0e0e0;
-}
-    </style>
-    <body>
-        <div class="container">
-            <h1>To-do list</h1>
-            
-            <div class="add-elements">
-                <input id="add" type="text" placeholder="Write your TO-DO">
+    }
 
-                <button id="btn">Add</button>
+    .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 2rem;
+        transform: translate(-50%, -50%);
+        background-color: #61262667;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+        backdrop-filter: blur(50px);
+        width: 560px;
+        height: 680px;
+        text-align: center;
+        font-family: 'Nunito', sans-serif;
 
-                <div class="clearfix">
-     
-                 
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        margin: 12px 0;
+
+        color: rgb(34, 14, 213);
+    }
+
+    .add-elements {
+        margin: 12px 0;
+
+    }
+
+    input {
+        padding: 8px 4px;
+        width: 70%;
+        background-color: #404344;
+        border-radius: 10px;
+        color: #d02001;
+        font-size: x-large;
+    }
+
+    button {
+        font-size: larger;
+        height: 2.2rem;
+        width: 3rem;
+        padding-top: 15px;
+        padding-bottom: 32px;
+        background-color: rgb(34, 14, 213);
+        border: none;
+        border-radius: 4px;
+        color: #fafafa;
+
+    }
+
+    .element-list {
+        height: 550px;
+
+    }
+
+    ul {
+        padding: 15px;
+
+    }
+
+    li {
+        list-style: none;
+        padding: 10px 5px;
+        background-color: rgb(16, 179, 165);
+        margin: 12px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+        border-radius: 3px;
+        transition: .4s;
+    }
+
+    button:hover {
+        background-color: #e1e1e1;
+        color: blue;
+        transition: ease-in, 600ms;
+    }
+
+    li:hover {
+        background-color: #e0e0e0;
+    }
+
+    .checked {
+        text-decoration: line-through;
+        background-color: #a56c15;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>To-do list</h1>
+
+        <div class="add-elements">
+            <input id="add" type="text" placeholder="Write your TO-DO">
+
+            <button id="btn">Add</button>
+
+            <div class="clearfix">
+
+
             </div>
-            
+
             <div class="element-list">
                 <ul id="list">
-                    
+
                 </ul>
             </div>
-         
 
 
-</div>
-            
+
         </div>
-        <script>
-            const input = document.querySelector("#add");
-const  btn = document.querySelector("#btn");
-const list = document.querySelector("#list");
-var el = document.getElementsByTagName('li');
 
-// this function will allow us to add elements when we click the button
-btn.onclick = function(){
-    
-    var txt = input.value;
-    if(txt ==''){
-        alert('Write your TO-DO');
-    }else{
-        li = document.createElement('li');
-    li.innerHTML = txt;
-    list.insertBefore(li,list.childNodes[0]);
-    input.value = '';
+    </div>
+    <script>
+        const input = document.querySelector("#add");
+        const btn = document.querySelector("#btn");
+        const list = document.querySelector("#list");
+        var el = document.getElementsByTagName('li');
 
-    
-}
-    }
-    
-    
-;
+        // this function will allow us to add elements when we click the button
+        btn.onclick = function () {
+
+            var txt = input.value;
+            if (txt == '') {
+                alert('Write your TO-DO');
+            } else {
+                li = document.createElement('li');
+                li.innerHTML = txt;
+                list.insertBefore(li, list.childNodes[0]);
+                input.value = '';
 
 
-//this function will allow us to check the clicked elements
-list.onclick = function(ev){
-    if(ev.target.tagName == 'LI'){
-         ev.target.classList.toggle('checked');
-    }
-};
-        </script>
-        
-    </body>
-    
+            }
+        }
+
+
+            ;
+
+
+        //this function will allow us to check the clicked elements
+        list.onclick = function (ev) {
+            if (ev.target.tagName == 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        };
+    </script>
+
+</body>
+
 </html>
